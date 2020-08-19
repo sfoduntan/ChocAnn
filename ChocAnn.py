@@ -30,7 +30,7 @@ class Member(object):
         self.streetAddress = address
 
     def get_address(self):
-        return self.address
+        return self.streetAddress
 
     def set_city(self, city):
         self.city = city
@@ -58,7 +58,7 @@ class Member(object):
 
 class Provider(object):
     def __init__(self, providerID, name):
-        self.providerID = memberID
+        self.providerID = providerID
         self.name = name
         self.email =  "\0" * 25
         self.streetAddress =  "\0" * 25
@@ -78,7 +78,7 @@ class Provider(object):
         self.streetAddress = address
 
     def get_address(self):
-        return self.address
+        return self.streetAddress
 
     def set_city(self, city):
         self.city = city
@@ -127,7 +127,7 @@ class ProviderDirectoryEntry(object):
         self.serviceFee = fee
     
     def getFee(self):
-        return self.fee
+        return self.serviceFee
         
 class ProviderDirectory(object):
     def __init__(self):
@@ -150,8 +150,8 @@ class Service(object):
     def set_member(self, member):
         self.set_member = member
 
-    def get_provider(self):
-        return self.provider
+    def get_member(self):
+        return self.member
 
 class  Operator(object):
     def __init__(self, anEployeeID, anEmployeeName, aSupervisor):
@@ -180,5 +180,4 @@ class ChocAnn(object):
 
     def get_providers(self):
         return self.providers
-
 
